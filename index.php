@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . "/functions.php";
 $characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#+-_.?!";
 
 if (isset($_GET['password-length'])) {
@@ -6,16 +7,7 @@ if (isset($_GET['password-length'])) {
     $new_password = generatePassword($pass_length, $characters);
 }
 
-// Generate password
-function generatePassword($length, $characters_string)
-{
-    $password = "";
-    for ($i = 0; $i < $length; $i++) {
-        $symbol = substr($characters_string, rand(0, strlen($characters_string) - 1), 1);
-        $password .= $symbol;
-    }
-    return $password;
-}
+
 ?>
 
 <!DOCTYPE html>
