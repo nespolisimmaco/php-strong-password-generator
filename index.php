@@ -1,6 +1,6 @@
 <?php
 include_once __DIR__ . "/functions.php";
-$characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#+-_.?!";
+include_once __DIR__ . "/data.php";
 
 if (isset($_GET['password-length'])) {
     $pass_length = $_GET['password-length'];
