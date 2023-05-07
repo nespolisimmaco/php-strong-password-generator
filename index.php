@@ -30,7 +30,9 @@ if (isset($_GET['password-length'])) {
             <div class="alert alert-<?php echo $_GET['password-length'] !== "" ? 'success' : 'danger'; ?>" role="alert">
                 <?php
                 if ($_GET['password-length'] !== "") {
-                    echo 'La tua password è: ' . $new_password;
+                    session_start();
+                    $_SESSION['password'] = $new_password;
+                    header("Location: success.php");
                 } else {
                     echo "ERRORE!!! Inserire la lunghezza";
                 }
